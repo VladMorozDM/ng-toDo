@@ -1,0 +1,12 @@
+<div class="item__container">
+  <div>
+    <p [ngClass]="{done:done}">{{date}}</p>
+    <input type="checkbox"
+           (change)="onCheckChange()"
+           [checked]="done"
+           ([ngModel])="done"
+    >
+  </div>
+  <span>{{description}}</span>
+  <input type="button" (click)="onClickDelete(id)" value="X">
+</div>
