@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ItemsComponent } from './items/items.component';
 import { ItemComponent } from './item/item.component';
 import { FilterItemsComponent } from './filter-items/filter-items.component';
+import { AddForm } from './add-form/add-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemsComponent,
     ItemComponent,
-    FilterItemsComponent
+    FilterItemsComponent,
+    AddForm
   ],
   imports: [
     BrowserModule,
