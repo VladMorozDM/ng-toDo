@@ -1,0 +1,14 @@
+<div>
+  <form [formGroup]="filterForm">
+    <input type="text" placeholder="search" formControlName="filterValue"
+           (ngModelChange)="changeFilterSample()"
+    >
+    <select name="sorting" formControlName="sortValue"
+            (change)="changeSorting()"
+    >
+      <option value="default">Default</option>
+      <option value="byTime">By data</option>
+      <option value="byText">By Alphabet</option>
+    </select>
+  </form>
+</div>
