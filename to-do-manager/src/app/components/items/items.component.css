@@ -1,0 +1,10 @@
+:host {
+  border-right: 1px solid darkgray;
+}
+:host ul{
+  min-height: 200px;
+  min-width: 500px;
+
+  padding: 0;
+  margin: 0;
+}

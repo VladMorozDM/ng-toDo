@@ -1,9 +1,8 @@
-
-  <div class="form-group">
+ <div class="form-group">
     <input class="form-control" [(ngModel)]="formData.description" #description="ngModel" required />
     <input type="button" value="Add" (click)="addUser()">
     <div [hidden]="description.valid || description.untouched" class="alert alert-danger">
       Не указано имя
     </div>
-  </div>
+ </div>
 

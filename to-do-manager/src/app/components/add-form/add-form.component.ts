@@ -9,7 +9,8 @@ export class Data{
 
 @Component({
   selector: 'add-form',
-  templateUrl: './add-form.component.html'
+  templateUrl: './add-form.component.html',
+  styleUrls: ['./add-form.component.css']
 })
 export class AddForm {
   constructor( private todoService: ToDoService ){}

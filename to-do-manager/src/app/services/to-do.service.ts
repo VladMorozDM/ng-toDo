@@ -11,9 +11,11 @@ const months = [ "January", "February", "March", "April", "May", "June",
 export class ToDoService {
   private items: Todo[] = [ ...items ];
   private filteredItems: Todo[] = [];
+  private isFiltered: boolean = false;
+  private currentItems = () => this.isFiltered ? this.filteredItems : this.items;
   private todoBehaviorSubject: BehaviorSubject<Todo[]> = new BehaviorSubject<Todo[]>(this.items);
   private id: number = 4;
-  private isFiltered: boolean = false;
+
   constructor( private filterService: FilterService ) { }
 
   getInstance(){
@@ -30,12 +32,14 @@ export class ToDoService {
     const date = new Date();
     const parsedDate = `${date.getDate()}.${months[date.getMonth()]}.${date.getFullYear()}` ;
     this.items.push( { date: parsedDate, description: description, id: this.id, done: false  } );
-    this.todoBehaviorSubject.next(this.items);
+    this.filteredItems.push( { date: parsedDate, description: description, id: this.id, done: false  } );
+    this.todoBehaviorSubject.next(this.currentItems());
     this.id++;
   }
   deleteItem( item: Todo ){
     this.items = this.items.filter( oldItem => oldItem.id !== item.id );
-    this.todoBehaviorSubject.next(this.items);
+    this.filteredItems = this.filteredItems.filter( oldItem => oldItem.id !== item.id );
+    this.todoBehaviorSubject.next(this.currentItems());
   }
   filterItems( sample: string ){
     if( sample === ''){
@@ -49,7 +53,9 @@ export class ToDoService {
     }
   }
   sortItems( sortingType: string ){
-    this.filterService.getSortedItems( sortingType, this.items );
+    const sorted = this.filterService.getSortedItems( sortingType, this.currentItems() );
+    console.log(sorted);
+    this.todoBehaviorSubject.next( sorted );
   }
 
 }

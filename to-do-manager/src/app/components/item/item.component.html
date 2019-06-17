@@ -1,6 +1,6 @@
-<div class="item__container">
-  <div>
-    <p [ngClass]="{done:done}">{{date}}</p>
+<div [ngClass]="{done:done}">
+  <div class="item__container">
+    <p >{{date}}</p>
     <input type="checkbox"
            (change)="onCheckChange()"
            [checked]="done"
