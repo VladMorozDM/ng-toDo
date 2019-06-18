@@ -18,3 +18,11 @@
   padding: 0 10px;
   border-bottom: 1px solid darkgray;
 }
+
+.btn-delete{
+  height: 25px;
+  width: 10%;
+  border: none;
+  background-color: #ff3d38;
+  color: whitesmoke;
+}

@@ -14,7 +14,7 @@ export class ToDoService {
   private isFiltered: boolean = false;
   private currentItems = () => this.isFiltered ? this.filteredItems : this.items;
   private todoBehaviorSubject: BehaviorSubject<Todo[]> = new BehaviorSubject<Todo[]>(this.items);
-  private id: number = 4;
+  private id: number = 7;
 
   constructor( private filterService: FilterService ) { }
 

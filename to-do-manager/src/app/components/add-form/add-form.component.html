@@ -1,8 +1,13 @@
  <div class="form-group">
-    <input class="form-control" [(ngModel)]="formData.description" #description="ngModel" required />
-    <input type="button" value="Add" (click)="addUser()">
-    <div [hidden]="description.valid || description.untouched" class="alert alert-danger">
-      Не указано имя
+   <div class="form-control">
+      <input type="text"
+             [ngClass]="{alert: description.invalid && description.touched}"
+             [(ngModel)]="formData.description" #description="ngModel" required
+      />
+      <input type="button" value="Add" (click)="addUser()">
+   </div>
+    <div [hidden]="description.valid || description.untouched" class="warning">
+      Enter description
     </div>
  </div>
 
