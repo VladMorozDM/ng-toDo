@@ -16,10 +16,18 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
   }
   onCheckChange(): void{
-    this.onChanged.emit(this);
+    this.onChanged.emit({
+      id: this.id,
+      description: this.description,
+      done: this.done, date: this.date
+    } );
   }
   onClickDelete( itemId ): void{
-    this.onDelete.emit(this);
+    this.onDelete.emit({
+      id: this.id,
+      description: this.description,
+      done: this.done, date: this.date
+    } );
   }
   @Output() onChanged = new EventEmitter<Todo>();
   @Output() onDelete = new EventEmitter<Todo>();
