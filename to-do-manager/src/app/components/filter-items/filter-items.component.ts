@@ -16,13 +16,19 @@ export class FilterItems implements OnInit{
     });
   }
   ngOnInit() {
-    this.filterForm.get("filterValue").valueChanges.subscribe( (val:string) => this.changeFilterSample(val) );
-    this.filterForm.get("sortValue").valueChanges.subscribe( (val:string) => this.changeSorting(val) );
+    this.filterForm
+      .get("filterValue")
+      .valueChanges
+      .subscribe( ( val:string ) => this.changeFilterSample(val) );
+    this.filterForm
+      .get("sortValue")
+      .valueChanges
+      .subscribe( ( val:string ) => this.changeSorting(val) );
   }
   changeFilterSample( sample: string):void{
     this.todoService.filterItems( sample )
   }
-  changeSorting():void{
-    this.todoService.sortItems( this.filterForm.value.sortValue )
+  changeSorting( sample: string ):void{
+    this.todoService.sortItems( sample )
   }
 }
