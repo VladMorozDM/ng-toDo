@@ -12,7 +12,7 @@
   width: 70%;
   height: 20px;
 }
-.form-group input[type="button"]{
+.form-group button{
   height: 25px;
   width: 25%;
   border: none;

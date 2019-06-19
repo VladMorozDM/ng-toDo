@@ -19,14 +19,16 @@ export class ItemComponent implements OnInit {
     this.onChanged.emit({
       id: this.id,
       description: this.description,
-      done: this.done, date: this.date
+      done: this.done,
+      date: this.date
     } );
   }
   onClickDelete( itemId ): void{
     this.onDelete.emit({
       id: this.id,
       description: this.description,
-      done: this.done, date: this.date
+      done: this.done,
+      date: this.date
     } );
   }
   @Output() onChanged = new EventEmitter<Todo>();
