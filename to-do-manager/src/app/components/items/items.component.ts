@@ -13,14 +13,21 @@ export class ItemsComponent implements OnInit{
   constructor( private todoService: ToDoService ) { }
   ngOnInit() {
     this.todoService.getInstance().subscribe(val => {
-      console.log(val);
       this.items = val;
     })
   }
   onChanged( item: Todo ):void{
-    this.todoService.redactItem( item );
+    this.todoService.redactItem( {
+      id: this.id,
+      description: this.description,
+      done: this.done, date: this.date
+    } );
   }
   onDelete( item: Todo ): void{
-    this.todoService.deleteItem( item );
+    this.todoService.deleteItem( {
+      id: this.id,
+      description: this.description,
+      done: this.done, date: this.date
+    } );
   }
 }

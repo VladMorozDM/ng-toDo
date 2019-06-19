@@ -27,7 +27,7 @@ export const items: Todo[] = [
   },
   {
     id: 5,
-    description: "stop your bleeding",
+    description: "stop the bleeding",
     done: true,
     date: "25.April.2019"
   },

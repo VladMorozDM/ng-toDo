@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Todo } from '../models/Todo'
 import { items } from '../models/initialItems'
 import { FilterService } from './filter-service.service'
-import { BehaviorSubject, of } from 'rxjs'
+import { BehaviorSubject } from 'rxjs'
 
 const months = [ "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December" ];
