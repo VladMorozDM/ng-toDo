@@ -2,21 +2,24 @@
   padding: 0;
   margin: 0;
 }
+
 :host main{
   display: flex;
-  justify-content: center;
+  flex: 1;
   padding: 0;
   margin: 0;
 }
 
 :host main .header {
-  width: 200px;
   display: flex;
+  flex-basis: 200px;
   justify-content: center;
   align-items: center;
   background-color: #000;
 }
 :host main .right-part{
+  display: flex;
+  flex: 1;
   background-color: lavender;
 }
 :host main div h1{

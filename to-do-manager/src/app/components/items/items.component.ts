@@ -17,7 +17,7 @@ export class ItemsComponent implements OnInit{
     })
   }
   onChanged( item: Todo ):void{
-    this.todoService.redactItem( item );
+    this.todoService.editItem( item );
   }
   onDelete( item: Todo ): void{
     this.todoService.deleteItem( item );
