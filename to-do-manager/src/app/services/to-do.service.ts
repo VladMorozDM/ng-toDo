@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Todo } from '../models/Todo';
 import { items } from '../models/initialItems';
 import { FilterService } from './filter-service.service';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 const months = [ 'January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December' ];
@@ -13,13 +13,13 @@ export class ToDoService {
   private filteredItems: Todo[] = [];
   private isFiltered = false;
   private todoBehaviorSubject = new BehaviorSubject<Todo[]>(this.items);
-  private id = 7;
+  private id = '7';
   private currentItems = () => this.isFiltered ? this.filteredItems : this.items;
 
   constructor(private filterService: FilterService) { }
 
-  getInstance() {
-    return this.todoBehaviorSubject;
+  getALl(): Observable<Todo[]> {
+    return this.todoBehaviorSubject.asObservable();
   }
 
   editItem(item: Todo): void {
@@ -38,7 +38,7 @@ export class ToDoService {
     this.items.push({date: parsedDate, description, id: this.id, done: false});
     this.filteredItems.push( {date: parsedDate, description, id: this.id, done: false});
     this.todoBehaviorSubject.next(this.currentItems());
-    this.id++;
+    this.id = `${Number(this.id) + 1}`;
   }
 
   deleteItem(item: Todo) {

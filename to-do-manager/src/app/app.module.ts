@@ -6,16 +6,14 @@ import { ToDoService } from './services/to-do.service'
 import { FilterService } from './services/filter-service.service'
 
 import { AppComponent } from './app.component';
-import { ItemsComponent } from './components/items/items.component';
-import { ItemComponent } from './components/item/item.component';
+import { TodoComponent } from './components/todo/todo.component';
 import { FilterItems } from './components/filter-items/filter-items.component';
 import { AddForm } from './components/add-form/add-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemsComponent,
-    ItemComponent,
+    TodoComponent,
     FilterItems,
     AddForm
   ],

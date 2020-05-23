@@ -1,0 +1,11 @@
+<div class="todo" [ngClass]="{done: todo?.done}">
+  <div class="item__container">
+    <p >{{todo?.date}}</p>
+    <input type="checkbox"
+           (change)="onCheckChange()"
+           [checked]="todo?.done"
+    >
+  </div>
+  <span>{{todo?.description}}</span>
+  <input type="button" (click)="onClickDelete(todo?.id)" value="X" class="btn-delete">
+</div>

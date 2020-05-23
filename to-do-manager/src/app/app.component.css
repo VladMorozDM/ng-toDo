@@ -18,16 +18,24 @@
   background-color: #000;
 }
 :host main .right-part{
-  display: flex;
-  flex: 1;
   background-color: lavender;
 }
 :host main div h1{
   color: white;
 }
 
+.todos-list {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.todo-wrapper {
+  display: flex;
+  flex: 1;
+}
+
 .form__container {
-  width: 100%;
   height: 100px;
   padding: 0 0 15px 0;
   margin: 0 0 15px 0;
@@ -40,4 +48,5 @@
 .right-part{
   display: flex;
   flex-direction: row;
+  flex: 1;
 }
