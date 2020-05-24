@@ -16,7 +16,7 @@ export class TodoComponent {
     this.onChanged.emit(this.todo.id);
   }
 
-  onClickDelete(itemId: number) {
+  onClickDelete(itemId: string) {
     this.onDelete.emit({
       id: this.todo.id,
       description: this.todo.description,
